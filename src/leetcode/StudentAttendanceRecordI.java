@@ -6,10 +6,9 @@ public class StudentAttendanceRecordI {
     }
 
     public static boolean checkRecord(String s) {
-        var split = s.toCharArray();
         int a = 0;
         int l = 0;
-        for (char ch : split) {
+        for (char ch : s.toCharArray()) {
             if (ch == 'A') a++;
             if (ch == 'L') l++;
             else l = 0;
