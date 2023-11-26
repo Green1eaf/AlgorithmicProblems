@@ -32,13 +32,10 @@ public class BinaryTreePostOrderTraversal {
     }
 
     private static void helper(TreeNode node, List<Integer> ans) {
-        if (node == null) return;
-        if (node.left != null) {
+        if (node != null) {
             helper(node.left, ans);
-        }
-        if (node.right != null) {
             helper(node.right, ans);
+            ans.add(node.val);
         }
-        ans.add(node.val);
     }
 }
