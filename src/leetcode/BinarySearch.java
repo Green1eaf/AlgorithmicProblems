@@ -1,5 +1,7 @@
 package leetcode;
 
+//  https://leetcode.com/problems/binary-search/
+
 public class BinarySearch {
     public static void main(String[] args) {
         int[] nums = new int[]{5};
