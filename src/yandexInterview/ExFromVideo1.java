@@ -34,3 +34,52 @@ public class ExFromVideo1 {
         return result;
     }
 }
+
+
+/**
+ * задача: как в неупорядоченном массиве найти диапазон с максимальной суммой?
+ */
+class Main {
+
+    public static void main() {
+
+
+        // arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+        // Нужно вернуть такой диапазон, где сумма чисел максимальная
+
+        // начало: 3,
+        // конец: 6
+        // сумма: 6
+
+        // 4, -1, 2, 1 = 6 (Максимальная сумма)
+
+
+    }
+
+
+    // Time: O(n) where n is size of arr
+    // Space: O(1)
+    public static int[] solution(int[] arr) {
+        int currentSum = arr[0], maxSum = arr[0];
+        int startOfSubstring = 0, endOfSubstring = 0, currentStartOfSubstring = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (currentSum < 0) { // сравнение текущей суммы с 0.
+                currentSum = arr[i];
+                currentStartOfSubstring = i;
+            } else {
+                currentSum += arr[i];
+            }
+
+            if (currentSum > maxSum) { // сравнение суммы текущей с макс.
+                maxSum = currentSum;
+                startOfSubstring = currentStartOfSubstring;
+                endOfSubstring = i;
+            }
+
+        }
+
+        return new int[]{startOfSubstring, endOfSubstring, maxSum};
+    }
+}
