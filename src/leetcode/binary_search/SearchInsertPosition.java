@@ -1,4 +1,4 @@
-package leetcode.firstSolutions.binary_search;
+package leetcode.binary_search;
 
 //  https://leetcode.com/problems/search-insert-position/
 
